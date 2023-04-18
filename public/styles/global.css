@@ -1,0 +1,130 @@
+/* Globals */
+:root {
+  --primary-color: #395b64;
+  --secondary-color: #a5c9ca;
+  --light-color: #e7f6f2;
+  --dark-color: #2c3333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+  font-size: 1rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+img {
+  width: 100%;
+}
+
+main {
+  margin-bottom: 4rem;
+}
+
+/* section {
+  padding: 1.5rem 0;
+} */
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1.3rem;
+  color: var(--dark-color);
+}
+.small-title {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  word-spacing: 0.1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--dark-color);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 2.5rem 0;
+  }
+
+  main {
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding: 0 1.75rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .container {
+    padding: 0 2.25rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0 2.75rem;
+  }
+}

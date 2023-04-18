@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STX</title>
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" href="./assets/site-icon.svg" />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/" class="logo">STX</a>
+        <nav class="nav">
+          <ul class="navbar">
+            <li>
+              <a href="#" class="nav-link active" id="home-link">
+                <img class="nav-link-icon" src="./assets/house.svg" alt="" />
+                <span class="nav-link-text">Asosiy</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" id="project-link"
+                ><img class="nav-link-icon" src="./assets/grid.svg" alt="" />
+                <span class="nav-link-text">Loyihalar</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" id="pricing-link"
+                ><img class="nav-link-icon" src="./assets/coin.svg" alt="" />
+                <span class="nav-link-text">Narxlar</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" id="about-link"
+                ><img
+                  class="nav-link-icon"
+                  src="./assets/person.svg"
+                  alt=""
+                /><span class="nav-link-text">Men Haqimda</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" id="contact-link"
+                ><img
+                  class="nav-link-icon"
+                  src="./assets/chat-dots.svg"
+                  alt=""
+                />
+                <span class="nav-link-text">Aloqa</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <%if(username && role){%>
+        <div class="profile-btn">
+          <h3 class="username"><%=username%>(<%=role%>)</h3>
+
+          <a class="logout-btn" href="/dashboard" class="logout">Dashboard</a>
+        </div>
+        <%}%>
+
+        <!-- <a class="auth-btn" href="./login.html">
+          <div class="login-btn">
+            <img class="login-icon" src="./assets/login.svg" alt="" />Login
+          </div>
+        </a> -->
+      </div>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section class="home page active-page" id="home">
+        <div class="container">
+          <div class="hero-container">
+            <div class="hero-image">
+              <img src="./assets/hero-img.jpg" class="" alt="" />
+            </div>
+
+            <div class="hero-info">
+              <h1 class="hero-title">
+                <span id="welcome-text"></span>Men Saidbek Xudayberdiyevman!
+              </h1>
+              <p class="hero-subtitle">
+                Biznesingizni yanada rivojlantirmoqchimisiz? Unda Mening
+                takliflarim orqali muammoingizga yechim toping!
+              </p>
+              <button class="hero-btn" id="hero-btn">Boshlash</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project page" id="project">
+        <div class="container">
+          <h2 class="title">Loyihalarimiz</h2>
+          <div class="project-container">
+            <!-- <form class="search-field" action="/search" method="post">
+              <label for="search">
+                <input type="text" class="search" id="search" />
+                <button class="search-btn">
+                  <img src="./assets/search.svg" alt="" />
+                </button>
+              </label>
+            </form> -->
+
+            <%data?.projects?.forEach(project => {%>
+            <div class="project-card">
+              <div class="card-image">
+                <%if(project.image){%>
+                <img src="<%=project.image%>" alt="" />
+                <%}else{%>
+                <img src="./assets/project.svg" alt="" />
+                <%}%>
+              </div>
+              <div class="card-info">
+                <h3 class="card-title"><%=project.title%></h3>
+                <p><%=project.description%></p>
+              </div>
+              <div class="card-btns">
+                <%if(project.liveDemo){%>
+                <a
+                  href="<%=project.liveDemo%>"
+                  target="_blank"
+                  class="card-btn live-demo-btn"
+                  ><img src="./assets/eye.svg" alt=""
+                /></a>
+                <%}%> <%if(project.src){%>
+                <a
+                  href="<%=project.src%>"
+                  target="_blank"
+                  class="card-btn src-btn"
+                >
+                  <img src="./assets/src-icon.svg" alt="" />
+                </a>
+                <%}%>
+              </div>
+            </div>
+            <%})%>
+
+            <!-- jh -->
+          </div>
+        </div>
+      </section>
+      <section class="pricing page" id="pricing">
+        <div class="container">
+          <h2 class="title">Bizning Narxlarimiz</h2>
+          <div class="pricing-container">
+            <%data?.pricing?.forEach(item => {%>
+
+            <div class="pricing-card">
+              <h2 class="pricing-card-title"><%=item.title%></h2>
+
+              <p class="pricing-card-label">
+                <span class="label-price"><%=item.price%>$</span>
+                <span class="label-text"></span>
+              </p>
+              <p class="pricing-card-text"><%=item.description%></p>
+
+              <a href="#" class="pricing-card-link">Bog'lanish</a>
+            </div>
+
+            <%})%>
+          </div>
+        </div>
+      </section>
+      <section class="about page" id="about">
+        <div class="container">
+          <h2 class="title">Men haqimda</h2>
+          <div class="about-container">
+            <div class="about-img">
+              <img src="./assets/about-img.jpg" alt="Developer Image" />
+            </div>
+            <div class="about-info">
+              <h3 class="about-title">
+                Saidbek Xudayberdiyev Full Stack Veb Dasturchi
+              </h3>
+              <p class="about-text">
+                Muammolarga yechim topish va tezkor fikrlash qobiliyatiga
+                tayanadigan shuningdek HTML, CSS(CSS3, CSS5),
+                JavaScript(VanillaJS, CommonJS, ES6, ES7), Bootstrap, Tailwind
+                CSS, NodeJS, EJS, ReactJS, ExpressJS, MongoDB, Mongoose, SQL,
+                GulpJS, TelegrafJS(Telegram bot) va Python(Telegram bot API)da
+                veb saytlar hamda telegram botlar ishlab chiqishda, ma'lumtolar
+                bazasi dizayni, UX va tezlik bo'yicha yuqori tajribaga ega FULL
+                STACK VEB dasturchisi!
+              </p>
+              <a
+                class="about-btn"
+                href="./assets/user-data/STX-resume.pdf"
+                download=""
+                >Resume</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact page" id="contact">
+        <div class="container">
+          <h2 class="title">Aloqa</h2>
+          <div class="contact-container">
+            <form action="/message-me" method="post" class="contact-me">
+              <h3 class="small-title">Loyihangiz haqida qisqacha</h3>
+              <label for="customer-email">
+                <input
+                  type="email"
+                  id="customer-email"
+                  name="email"
+                  placeholder="Elektron pochta manzili"
+                  autocomplete="off"
+                  required
+                />
+              </label>
+              <label for="customer-phone">
+                <input
+                  type="tel"
+                  id="customer-phone"
+                  name="phone"
+                  placeholder="Tel. raqami"
+                  autocomplete="off"
+                  required
+                />
+              </label>
+              <label for="customer-full-name">
+                <input
+                  type="text"
+                  id="customer-full-name"
+                  name="fullName"
+                  placeholder="Ismingiz(To'liq)"
+                  autocomplete="off"
+                  required
+                />
+              </label>
+              <label for="customer-project">
+                <input
+                  type="text"
+                  id="customer-project"
+                  name="project"
+                  placeholder="Loyihangiz"
+                  autocomplete="off"
+                  required
+                />
+              </label>
+              <textarea
+                id=""
+                rows=""
+                name="message"
+                placeholder="Qisqacha Ma'lumot"
+                required
+              ></textarea>
+              <button type="submit" class="contact-me-btn">Yuborish</button>
+            </form>
+            <div class="contact-info">
+              <h3 class="small-title">Qo'shimcha ma'lumot</h3>
+              <div class="contact-addresses">
+                <p class="address-item">
+                  <span>Manzil:</span> Toshkent shahri, O'zbekiston
+                </p>
+                <p class="address-item">
+                  <span>Tel. Raqami:</span>
+                  +998 (94) 023 01 55
+                </p>
+                <p class="address-item">
+                  <span>Linked in:</span>
+                  Saidbek Xudayberdiyev
+                </p>
+              </div>
+              <div class="social-btns-box">
+                <a
+                  href="http://www.instagram.com/saidbekkhudayberdiev"
+                  target="_blank"
+                  class="social-btn"
+                >
+                  <img src="./assets/instagram.svg" alt="" />
+                </a>
+                <a
+                  href="https://t.me/saidbekxudayberdiyev"
+                  target="_blank"
+                  class="social-btn"
+                >
+                  <img src="./assets/telegram.svg" alt="" />
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=998940230155"
+                  target="_blank"
+                  class="social-btn"
+                >
+                  <img src="./assets/whatsapp.svg" alt="" />
+                </a>
+                <a
+                  href="https://github.com/saidbek-ai"
+                  target="_blank"
+                  class="social-btn"
+                >
+                  <img src="./assets/github.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="faq">
+            <h3 class="title">FAQ</h3>
+            <div class="acc-cont">
+              <button class="accordion">Section 1</button>
+              <div class="panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <button class="accordion">Section 1</button>
+              <div class="panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="footer-text" id="footer-text"></p>
+      </div>
+    </footer>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>

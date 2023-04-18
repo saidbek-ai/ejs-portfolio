@@ -1,0 +1,81 @@
+.state-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.state-container .content {
+  border: 1px solid var(--primary-color);
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.state-container .content.error {
+  border: 1px solid red;
+}
+
+.state-container .content.error .state-title {
+  color: red;
+}
+
+.state-container .content.error .state-subtitle {
+  color: red;
+}
+.state-container .content.error .state-btn {
+  background: red;
+  color: var(--light-color);
+  border: 1px solid #ff0000;
+}
+
+.state-container .content.error .state-btn:hover {
+  color: red;
+  background: var(--white-color);
+}
+
+.state-container .content .image {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.state-container .content .state-title {
+  font-size: 2.3rem;
+  text-transform: capitalize;
+  margin: 1rem 0;
+  color: var(--primary-color);
+}
+
+.state-container .content .state-subtitle {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.state-container .content .state-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  background: var(--primary-color);
+  color: var(--light-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  padding: 0.7rem 2.4rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.state-container .content .state-btn:hover {
+  color: var(--primary-color);
+  background: var(--white-color);
+}
+
+/* .state-container .content .state-btn.error {
+  background: red;
+  color: var(--light-color);
+  border: 1px solid red;
+} */
+
+/* .state-container .content .state-btn:hover.error {
+  color: red;
+  background: var(--white-color);
+} */

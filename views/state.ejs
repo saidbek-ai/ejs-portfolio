@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STX</title>
+    <link rel="stylesheet" href="./../styles/global.css" />
+    <link rel="stylesheet" href="./../styles/state.css" />
+  </head>
+  <body>
+    <%if (status.toLowerCase() === "failed"){%>
+    <div class="container state-container error">
+      <div class="content error">
+        <div class="image">
+          <img src="./../assets/state-error.svg" alt="" />
+        </div>
+        <h2 class="state-title"><%= status %></h2>
+        <p class="state-subtitle"><%= message %></p>
+        <a href="<%=link%>" class="state-btn">Continue</a>
+      </div>
+    </div>
+    <%}else{%>
+    <div class="container state-container">
+      <div class="content">
+        <div class="image">
+          <img src="./../assets/state-success.svg" alt="" />
+        </div>
+        <h2 class="state-title"><%= status %></h2>
+        <p class="state-subtitle"><%= message %></p>
+        <a href="<%=link%>" class="state-btn">Continue</a>
+      </div>
+    </div>
+    <%}%>
+  </body>
+</html>

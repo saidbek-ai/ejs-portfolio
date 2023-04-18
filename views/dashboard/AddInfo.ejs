@@ -1,0 +1,125 @@
+<%- include("./partials/header");%>
+
+<div class="">
+  <h2 class="title">Developer Info</h2>
+
+  <form action="" method="post" class="product-form">
+    <h3 class="title">Hero Section</h3>
+
+    <div class="product-links">
+      <label for="firstName">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="First Name"
+          id="firstName"
+          name="firstName"
+        />
+      </label>
+      <label for="lastName">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Last Name"
+          id="lastName"
+          name="lastName"
+        />
+      </label>
+    </div>
+
+    <label for="hero-image" class="image-label">
+      Select Hero Image 1000x1000
+      <i class="fa-solid fa-camera"></i>
+      <input
+        type="file"
+        accept="image/png, image/jpg, image/gif, image/jpeg"
+        class="add-info-img"
+        id="hero-image"
+      />
+    </label>
+
+    <label for="aboutImage" class="image-label">
+      Select About Image 16x9
+      <i class="fa-solid fa-camera"></i>
+      <input
+        type="file"
+        accept="image/png, image/jpg, image/gif, image/jpeg"
+        class="add-info-img"
+        id="aboutImage"
+      />
+    </label>
+
+    <h2 class="title">Contact Section</h2>
+    <h3 class="small-title">Additional info</h3>
+    <div class="product-links">
+      <label for="address">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Address"
+          id="address"
+          name="address"
+        />
+      </label>
+      <label for="phoneNumber">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Phone Number"
+          id="phoneNumber"
+          name="phoneNumber"
+        />
+      </label>
+    </div>
+    <h3 class="small-title">Social Addresses</h3>
+    <div class="product-links">
+      <label for="instagram">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Instagram"
+          id="instagram"
+          name="instagram"
+        />
+      </label>
+      <label for="telegram">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Telegram"
+          id="telegram"
+          name="telegram"
+        />
+      </label>
+      <label for="whatsapp">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Whatsapp"
+          id="whatsapp"
+          name="whatsapp"
+        />
+      </label>
+      <label for="github">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Github"
+          id="github"
+          name="github"
+        />
+      </label>
+    </div>
+    <button class="btn">Submit</button>
+  </form>
+</div>
+
+<%- include("./partials/footer");%>

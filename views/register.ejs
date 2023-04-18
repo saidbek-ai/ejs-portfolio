@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STX Sign up</title>
+
+    <!-- FontAwesomeLink -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/login-register.css" />
+  </head>
+  <body>
+    <div class="container lr-container">
+      <div class="lr-box">
+        <h3 class="lr-title">Sign Up</h3>
+        <form class="lr-form" action="/user/register" method="post">
+          <label for="fName">
+            <input
+              placeholder="First Name"
+              class="lr-input"
+              type="text"
+              name="firstName"
+              id="fName"
+            />
+          </label>
+          <label for="lName">
+            <input
+              placeholder="Last Name"
+              class="lr-input"
+              type="text"
+              name="lastName"
+              id="lName"
+            />
+          </label>
+          <label for="email">
+            <input
+              placeholder="Email"
+              class="lr-input"
+              type="email"
+              name="email"
+              id="email"
+            />
+          </label>
+          <label for="reg-password">
+            <input
+              placeholder="Password"
+              class="lr-input"
+              type="password"
+              name="password"
+              id="reg-password"
+            />
+            <p class="password-icon" id="register-pass-btn">
+              <i class="fa-regular fa-eye"></i>
+            </p>
+          </label>
+          <label for="confirmPassword">
+            <input
+              placeholder="Confirm Password"
+              class="lr-input"
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
+            <p class="password-icon" id="register-confirmPass-btn">
+              <i class="fa-regular fa-eye"></i>
+            </p>
+          </label>
+          <button class="lr-btn">Sign Up</button>
+        </form>
+        <div class="lr-line-box">
+          <p class="lr-line-text">OR</p>
+          <hr class="lr-line" />
+        </div>
+        <div class="social-auth-box">
+          <a href="#" class="google lr-social-btn">
+            <img
+              class="lr-social-btn-icon"
+              src="./assets/google-icon.svg"
+              =""
+            />
+            <p class="lr-social-btn-text">Sign up via Google</p>
+          </a>
+        </div>
+        <p class="lr-subtitle">
+          Already a member?
+          <a class="lr-switch-link" href="/login">Sign in</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="./script/login-register.js"></script>
+  </body>
+</html>

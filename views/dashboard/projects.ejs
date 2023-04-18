@@ -1,0 +1,115 @@
+<%- include("./partials/header");%>
+
+<div class="">
+  <h2 class="title">Add Projects</h2>
+    <form action="/dashboard/project" method="post" enctype="multipart/form-data" class="product-form">
+      <label for="image" class="image-label">
+        Select Image
+        <i class="fa-solid fa-camera"></i>
+        <input
+          type="file"
+          class="imag-input"
+          id="image"
+          name="image"
+          autocomplete="off"
+          style="display: none;"
+          required
+        />
+      </label>
+      <label for="title">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Title"
+          id="title"
+          name="title"
+          required
+        />
+      </label>
+      <label for="description">
+        <textarea
+          class="product-textarea"
+          autocomplete="off"
+          placeholder="Description"
+          id="description"
+          rows="5"
+          name="description"
+          required
+        ></textarea>
+      </label>
+      <div class="product-links">
+        <label for="liveDemo">
+          <input
+            type="text"
+            class="product-input"
+            autocomplete="off"
+            placeholder="Live Demo Link"
+            id="liveDemo"
+            name="liveDemo"
+          />
+        </label>
+        <label for="srcLink">
+          <input
+            type="text"
+            class="product-input"
+            autocomplete="off"
+            placeholder="Src Demo Link"
+            id="srcLink"
+            name="src"
+          />
+        </label>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  <h2 class="title">Projects</h2>
+    <div class="products">
+
+
+      <%projects.forEach(project => {%>
+        <div class="product">
+          <div class="image">
+            <%if(project.image){%>
+            <img
+              src="<%=project.image%>
+              "
+              alt=""
+            />
+            <%}else{%>
+              <img
+              src="./../assets/project.svg
+              "
+              alt=""
+            />
+            <%}%>
+          </div>
+          <div class="product-info">
+            <h2 class="product-title" id="product-title"
+              ><%=project.title%></h2
+            >
+            <p class="project-card-description"><%=project.description%></p>
+            
+          </div>
+          <div class="btn-container">
+            
+              <a href="/dashboard/project/delete/<%=project._id%>" class="project-card-btn"><i class="fa-solid fa-trash"></i></a>
+            
+            <%if(project.liveDemo){%>
+            <a href="<%=project.liveDemo%>" target="_blank">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+            <%}%>
+            <%if(project.src){%>
+            <a href="<%=project.src%>" target="_blank">
+              <i class="fa-solid fa-code"></i>
+            </a>
+            <%}%>
+          </div>
+        </div>
+      <%})%>
+      
+      </div>
+    </div>
+</div>
+
+<%- include("./partials/footer");%>

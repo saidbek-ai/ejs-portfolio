@@ -1,0 +1,21 @@
+<%- include("./partials/header");%>
+<div class="user-profile">
+  <div class="user-profile-box">
+    <div class="user-profile-image">
+      <%if(user.image){%>
+      <img src="<%=user.image%>" alt="" />
+      <%}%>
+    </div>
+    <h2 class="user-profile-fullName">
+      <%=user.firstName%> <%=user.lastName%>
+    </h2>
+  </div>
+  <div class="user-profile-info">
+    <p class="user-profile-item">Role: <span><%=user.role%></span></p>
+    <p class="user-profile-item">Email : <span><%=user.email%>></span></p>
+    <p class="user-profile-item">
+      Signed up : <span><%=user.createdAt%></span>
+    </p>
+  </div>
+</div>
+<%- include("./partials/footer");%>

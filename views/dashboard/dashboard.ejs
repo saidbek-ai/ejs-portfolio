@@ -1,0 +1,20 @@
+<%- include("./partials/header");%>
+<div class="">
+  <%if(messages.length > 0){%> <%messages.forEach(message => {%>
+  <div class="dashboard-message">
+    <h3 class="dashboard-message-username">Username: <%=message.fullName%></h3>
+    <p class="dashboard-message-projectName">Project: <%=message.project%></p>
+    <p class="dashboard-message-body"><%=message.message%></p>
+    <p class="dashboard-message-email">Email: <%=message.email%></p>
+    <p class="dashboard-message-email">Phone Number: <%=message.phone%></p>
+    <p class="dashboard-message-email">Sended At: <%=message.createdAt%></p>
+    <a href="/dashboard/message/delete/<%=message._id%>" class="btn">
+      <i class="fa-solid fa-trash"></i>
+    </a>
+  </div>
+
+  <%})}else{%>
+  <p class="title">There is no message!</p>
+  <%}%>
+</div>
+<%- include("./partials/footer");%>

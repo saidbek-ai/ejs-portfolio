@@ -1,0 +1,58 @@
+<%- include("./partials/header");%>
+
+<div class="">
+  <h2 class="title">Add Product</h2>
+  <form action="" method="post" class="product-form">
+    <label for="image" class="image-label">
+      Select Image
+      <i class="fa-solid fa-camera"></i>
+      <input
+        type="file"
+        accept="image/png, image/jpg, image/gif, image/jpeg"
+        class="image-input"
+        id="image"
+        autocomplete="off"
+      />
+    </label>
+    <label for="title">
+      <input
+        type="text"
+        class="product-input"
+        autocomplete="off"
+        placeholder="Title"
+        id="title"
+      />
+    </label>
+    <label for="description">
+      <textarea
+        class="product-textarea"
+        autocomplete="off"
+        placeholder="Description"
+        id="description"
+        rows="5"
+      ></textarea>
+    </label>
+    <div class="product-links">
+      <label for="liveDemo">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Live Demo Link"
+          id="liveDemo"
+        />
+      </label>
+      <label for="srcLink">
+        <input
+          type="text"
+          class="product-input"
+          autocomplete="off"
+          placeholder="Src Demo Link"
+          id="srcLink"
+        />
+      </label>
+    </div>
+  </form>
+</div>
+
+<%- include("./partials/footer");%>
